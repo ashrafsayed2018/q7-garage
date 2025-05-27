@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="خدمات متخصصة لتصليح وصيانة جميع أنواع مكيفات السيارات في كراج سيفن Q7 Garage بالكويت. فحص، تعبئة غاز، إصلاح كمبروسر، وتنظيف. اتصل بنا على 50735077 أو 50266004."
+    />
+    <title>تصليح وصيانة جميع انواع المكيفات - كراج سيفن</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary-blue': '#1e40af',
+              'primary-yellow': '#fbbf24',
+              'dark-blue': '#1e3a8a',
+            },
+          },
+        },
+      }
+    </script>
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+      body {
+        font-family: 'Cairo', sans-serif;
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      }
+
+      /* Mobile Menu Styles */
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        z-index: 9999;
+        transition: right 0.3s ease-in-out;
+        overflow-y: auto;
+      }
+
+      .mobile-menu.active {
+        right: 0;
+      }
+
+      .mobile-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 9998;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      }
+
+      .mobile-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 4px;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 3px 0;
+        transition: 0.3s;
+        border-radius: 2px;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+
+      @media (max-width: 768px) {
+        .desktop-nav {
+          display: none;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+      }
+
+      /* Fixed Call Section */
+      .fixed-call-section {
+        position: fixed;
+        right: 20px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-2xl font-bold text-primary-yellow">كراج سيفن</h2>
+          <button class="text-white text-2xl" id="closeMobileMenu">
+            &times;
+          </button>
+        </div>
+
+        <nav class="space-y-4">
+          <a
+            href="index.html"
+            class="block text-white text-lg py-3 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+            >الرئيسية</a
+          >
+
+          <div class="border-t border-white border-opacity-20 pt-4">
+            <p class="text-primary-yellow font-bold mb-3">خدماتنا</p>
+            <a
+              href="engine-service.html"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >تصليح وصيانة ماكينات السيارات</a
+            >
+            <a
+              href="transmission-service.html"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >صيانة وتصليح الجيرات</a
+            >
+            <a
+              href="programming-service.html"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >برمجة جميع انواع السيارات</a
+            >
+            <a
+              href="ac-service.html"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors bg-white bg-opacity-20"
+              >تصليح وصيانة المكيفات</a
+            >
+            <a
+              href="electrical-service.html"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >تصليح كهرباء السيارات</a
+            >
+          </div>
+
+          <div class="border-t border-white border-opacity-20 pt-4">
+            <a
+              href="#"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >اتصل بنا</a
+            >
+            <a
+              href="#"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              ><i class="fab fa-facebook-f ml-2"></i> Facebook</a
+            >
+            <a
+              href="#"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              ><i class="fab fa-instagram ml-2"></i> Instagram</a
+            >
+            <a
+              href="#"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              ><i class="fab fa-tiktok ml-2"></i> TikTok</a
+            >
+            <a
+              href="#"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              ><i class="fab fa-twitter ml-2"></i> Twitter</a
+            >
+          </div>
+
+          <div class="border-t border-white border-opacity-20 pt-4">
+            <p class="text-primary-yellow font-bold mb-3">اتصل بنا</p>
+            <a
+              href="tel:50735077"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >📞 50735077</a
+            >
+            <a
+              href="tel:50266004"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >📞 50266004</a
+            >
+            <a
+              href="https://wa.me/96550735077"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >💬 واتساب</a
+            >
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white">
+      <div class="container mx-auto px-4">
+        <!-- Top Navigation - Hidden on Mobile -->
+        <div class="desktop-nav">
+          <div
+            class="flex justify-between items-center py-2 text-sm border-b border-blue-400"
+          >
+            <div class="flex items-center space-x-4 space-x-reverse">
+              <span>تصليح وصيانة ميكانيكا السيارات Q7 منذ 95</span>
+            </div>
+            <div class="flex items-center space-x-4 space-x-reverse">
+              <a href="#" class="hover:text-primary-yellow transition-colors"
+                ><i class="fab fa-twitter"></i></a
+              >
+              <a href="#" class="hover:text-primary-yellow transition-colors"
+                >اتصل بنا</a
+              >
+              <div class="dropdown">
+                <a
+                  href="#"
+                  class="hover:text-primary-yellow transition-colors cursor-pointer"
+                  >خدماتنا ▼</a
+                >
+                <div class="dropdown-content">
+                  <a href="engine-service.html"
+                    >تصليح وصيانة ماكينات السيارات</a
+                  >
+                  <a href="transmission-service.html">صيانة وتصليح الجيرات</a>
+                  <a href="programming-service.html"
+                    >برمجة جميع انواع السيارات</a
+                  >
+                  <a href="ac-service.html">تصليح وصيانة جميع انواع المكيفات</a>
+                  <a href="electrical-service.html">تصليح كهرباء السيارات</a>
+                </div>
+              </div>
+              <a href="#" class="hover:text-primary-yellow transition-colors"
+                ><i class="fab fa-facebook-f"></i></a
+              >
+              <a href="#" class="hover:text-primary-yellow transition-colors"
+                ><i class="fab fa-tiktok"></i></a
+              >
+              <a href="#" class="hover:text-primary-yellow transition-colors"
+                ><i class="fab fa-instagram"></i></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="py-4">
+          <div class="flex justify-between items-center">
+            <div class="text-2xl font-bold">شركة</div>
+            <div class="text-center">
+              <a
+                href="index.html"
+                class="text-4xl font-bold text-primary-yellow mb-2 hover:text-yellow-300 transition-colors"
+                >كراج سيفن</a
+              >
+              <div class="text-lg">لاصلاح ميكانيكا السيارات</div>
+            </div>
+            <div class="flex items-center space-x-4 space-x-reverse">
+              <div class="text-right hidden md:block">
+                <div class="text-xl font-bold">50735077</div>
+                <div class="text-xl font-bold">50266004</div>
+              </div>
+              <!-- Mobile Menu Button -->
+              <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-16"
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold mb-6">
+          تصليح وصيانة جميع انواع المكيفات
+        </h1>
+        <p class="text-xl mb-8">
+          خدمات متخصصة لصيانة وإصلاح أنظمة التكييف في السيارات
+        </p>
+      </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-primary-blue mb-6">
+              خدمات المكيفات المتخصصة
+            </h2>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3 space-x-reverse">
+                <div
+                  class="w-6 h-6 bg-cyan-500 rounded-full flex-shrink-0 mt-1"
+                ></div>
+                <div>
+                  <h3 class="font-bold text-lg">فحص نظام التكييف</h3>
+                  <p class="text-gray-600">
+                    فحص شامل لجميع مكونات نظام التكييف والتبريد
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3 space-x-reverse">
+                <div
+                  class="w-6 h-6 bg-cyan-500 rounded-full flex-shrink-0 mt-1"
+                ></div>
+                <div>
+                  <h3 class="font-bold text-lg">تعبئة غاز التبريد</h3>
+                  <p class="text-gray-600">
+                    تعبئة وإعادة شحن غاز التبريد بالكمية المناسبة
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3 space-x-reverse">
+                <div
+                  class="w-6 h-6 bg-cyan-500 rounded-full flex-shrink-0 mt-1"
+                ></div>
+                <div>
+                  <h3 class="font-bold text-lg">إصلاح الكمبروسر</h3>
+                  <p class="text-gray-600">
+                    صيانة وإصلاح ضاغط المكيف (الكمبروسر)
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3 space-x-reverse">
+                <div
+                  class="w-6 h-6 bg-cyan-500 rounded-full flex-shrink-0 mt-1"
+                ></div>
+                <div>
+                  <h3 class="font-bold text-lg">تنظيف المبخر</h3>
+                  <p class="text-gray-600">تنظيف وتطهير المبخر والمكثف</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-100 rounded-lg p-8">
+            <div class="text-center">
+              <div
+                class="w-32 h-32 bg-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <svg
+                  class="w-16 h-16 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                تبريد فعال طوال العام
+              </h3>
+              <p class="text-gray-600">نضمن لك تكييف مثالي في جميع الأوقات</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AC Problems -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-primary-blue mb-12">
+          مشاكل المكيف الشائعة
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg p-6 shadow-lg">
+            <div
+              class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-center mb-3">عدم التبريد</h3>
+            <p class="text-gray-600 text-center">
+              المكيف لا يبرد أو التبريد ضعيف
+            </p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-lg">
+            <div
+              class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-center mb-3">أصوات غريبة</h3>
+            <p class="text-gray-600 text-center">أصوات غير طبيعية من المكيف</p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-lg">
+            <div
+              class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-center mb-3">تسريب المياه</h3>
+            <p class="text-gray-600 text-center">تسريب مياه من وحدة التكييف</p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-lg">
+            <div
+              class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-center mb-3">روائح كريهة</h3>
+            <p class="text-gray-600 text-center">روائح غير مرغوبة من المكيف</p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-lg">
+            <div
+              class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-center mb-3">مشاكل كهربائية</h3>
+            <p class="text-gray-600 text-center">أعطال في الدوائر الكهربائية</p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-lg">
+            <div
+              class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-center mb-3">ضعف الهواء</h3>
+            <p class="text-gray-600 text-center">ضعف تدفق الهواء من المكيف</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-16 bg-primary-blue text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">مكيف سيارتك لا يعمل؟</h2>
+        <p class="text-xl mb-8">
+          اتصل بنا الآن للصول على فحص مجاني وإصلاح سريع
+        </p>
+        <div class="flex justify-center space-x-8 space-x-reverse">
+          <a
+            href="tel:50735077"
+            class="bg-primary-yellow text-dark-blue px-8 py-4 rounded-lg font-bold text-xl hover:bg-yellow-400 transition-colors"
+          >
+            اتصل الآن: 50735077
+          </a>
+          <a
+            href="tel:50266004"
+            class="bg-white text-primary-blue px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors"
+          >
+            أو: 50266004
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-blue text-white py-8">
+      <div class="container mx-auto px-4 text-center">
+        <div class="mb-4">
+          <a href="index.html" class="text-2xl font-bold text-primary-yellow"
+            >كراج سيفن</a
+          >
+        </div>
+        <p>&copy; 2024 كراج سيفن. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <!-- Fixed Call Section -->
+    <div class="fixed-call-section">
+      <a
+        href="https://wa.me/96550735077"
+        class="call-button whatsapp-button"
+        target="_blank"
+        title="تواصل عبر الواتساب"
+      >
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.386"
+          />
+        </svg>
+      </a>
+
+      <a href="tel:50735077" class="call-button phone-button" title="اتصل الآن">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+          <path
+            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+          />
+        </svg>
+      </a>
+    </div>
+  </body>
+</html>
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+      const hamburger = document.getElementById('hamburger')
+      const mobileMenu = document.getElementById('mobileMenu')
+      const mobileOverlay = document.getElementById('mobileOverlay')
+      const closeMobileMenu = document.getElementById('closeMobileMenu')
+
+      function openMobileMenu() {
+        mobileMenu.classList.add('active')
+        mobileOverlay.classList.add('active')
+        hamburger.classList.add('active')
+        document.body.style.overflow = 'hidden'
+      }
+
+      function closeMobileMenuFunc() {
+        mobileMenu.classList.remove('active')
+        mobileOverlay.classList.remove('active')
+        hamburger.classList.remove('active')
+        document.body.style.overflow = ''
+      }
+
+      hamburger.addEventListener('click', openMobileMenu)
+      closeMobileMenu.addEventListener('click', closeMobileMenuFunc)
+      mobileOverlay.addEventListener('click', closeMobileMenuFunc)
+
+      // Close menu when clicking on a link
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a')
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener('click', closeMobileMenuFunc)
+      })
+    </script>
+  </body>
+</html>
