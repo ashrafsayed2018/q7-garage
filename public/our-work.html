@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="نبذة عن أعمالنا في كيو سيفن كيو سيفن Garage - شاهد صور وفيديوهات من أعمالنا في صيانة وإصلاح السيارات الألمانية"
+    />
+    <title>نبذة عن أعمالنا - كيو سيفن</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary-blue': '#1e40af',
+              'primary-yellow': '#fbbf24',
+              'dark-blue': '#1e3a8a',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+
+      body {
+        font-family: 'Cairo', sans-serif;
+      }
+
+      .gradient-bg {
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      }
+
+      .yellow-gradient {
+        background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      }
+
+      .gallery-item {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+      }
+
+      .video-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 300px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        border-radius: 8px;
+        top: 100%;
+        right: 0;
+        border: 1px solid #e5e7eb;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .dropdown-content a {
+        color: #374151;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease;
+        border-bottom: 1px solid #f3f4f6;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f8fafc;
+        color: #1e40af;
+      }
+
+      .dropdown-content a:first-child {
+        border-radius: 8px 8px 0 0;
+      }
+
+      .dropdown-content a:last-child {
+        border-radius: 0 0 8px 8px;
+      }
+
+      /* Mobile Menu Styles */
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        z-index: 9999;
+        transition: right 0.3s ease-in-out;
+        overflow-y: auto;
+      }
+
+      .mobile-menu.active {
+        right: 0;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 4px;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 3px 0;
+        transition: 0.3s;
+        border-radius: 2px;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+
+      @media (max-width: 768px) {
+        .desktop-nav {
+          display: none;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white">
+      <div class="container mx-auto px-4">
+        <!-- Top Navigation -->
+        <div class="desktop-nav">
+          <div
+            class="flex justify-between items-center py-2 text-sm border-b border-blue-400"
+          >
+            <div class="flex items-center space-x-4 space-x-reverse">
+              <a href="/" class="hover:text-primary-yellow transition-colors"
+                >تصليح وصيانة ميكانيكا السيارات كيو سيفن منذ 95</a
+              >
+            </div>
+            <div class="flex items-center space-x-4 space-x-reverse">
+              <div class="dropdown">
+                <a
+                  href="#"
+                  class="hover:text-primary-yellow transition-colors cursor-pointer"
+                  >خدماتنا ▼</a
+                >
+                <div class="dropdown-content">
+                  <a href="engine-service.html"
+                    >تصليح وصيانة ماكينات السيارات</a
+                  >
+                  <a href="transmission-service.html">صيانة وتصليح الجيرات</a>
+                  <a href="programming-service.html"
+                    >برمجة جميع انواع السيارات</a
+                  >
+                  <a href="ac-service.html">تصليح وصيانة جميع انواع المكيفات</a>
+                  <a href="electrical-service.html">تصليح كهرباء السيارات</a>
+                  <a href="our-work.html">نبذة عن أعمالنا</a>
+                </div>
+              </div>
+              <a
+                href="https://www.facebook.com/European.art.garage?mibextid=wwXIfr&rdid=tIxHOR6Wfs1CNluP&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18rJ41BNvW%2F%3Fmibextid%3DwwXIfr#"
+                target="_blank"
+                class="hover:text-primary-yellow transition-colors"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/q7.garage/?igsh=MXg2ZG9xMjJvM3Z4dA%3D%3D&utm_source=qr#"
+                target="_blank"
+                class="hover:text-primary-yellow transition-colors"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@q7.garage?_t=ZS-8wiI6zuzN4y&_r=1"
+                target="_blank"
+                class="hover:text-primary-yellow transition-colors"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a
+                href="https://www.threads.com/@q7.garage"
+                target="_blank"
+                class="hover:text-primary-yellow transition-colors"
+                ><i class="fab fa-threads"></i
+              ></a>
+              <a
+                href="https://www.snapchat.com/add/q7.garage?invite_id=r_3h-s1a&locale=en_KW&share_id=AYO7vHVGTCas6v_fg5ZXGw&sid=f8a9545074e74d2fabbdf93a01bec0e7"
+                target="_blank"
+                class="hover:text-primary-yellow transition-colors"
+                ><i class="fab fa-snapchat"></i
+              ></a>
+              <a href="#" class="hover:text-primary-yellow transition-colors"
+                >اتصل بنا</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="py-4">
+          <div class="flex justify-between items-center">
+            <div class="text-2xl font-bold">
+              <a
+                href="index.html"
+                class="hover:text-primary-yellow transition-colors"
+                >شركة</a
+              >
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-primary-yellow mb-2">
+                <a href="index.html" class="hover:text-white transition-colors"
+                  >كيو سيفن</a
+                >
+              </div>
+              <div class="text-lg">لاصلاح ميكانيكا السيارات</div>
+            </div>
+            <div class="flex items-center space-x-4 space-x-reverse">
+              <div class="text-right hidden md:block">
+                <div class="text-xl font-bold">50735077</div>
+                <div class="text-xl font-bold">50266004</div>
+              </div>
+              <!-- Mobile Menu Button -->
+              <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="yellow-gradient py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold text-white mb-4">نبذة عن أعمالنا</h1>
+        <p class="text-xl text-white">
+          شاهد أعمالنا المتميزة في صيانة وإصلاح السيارات
+        </p>
+      </div>
+    </section>
+
+    <!-- Images Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-primary-blue mb-4">معرض الصور</h2>
+          <p class="text-lg text-gray-600">
+            صور من أعمالنا في صيانة وإصلاح السيارات الألمانية
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- صورة 1: ميكانيكا السيارات -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <img
+              src="images/car-machine.jpeg"
+              alt="ميكانيكا السيارات"
+              class="w-full h-80 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">
+                ميكانيكا السيارات
+              </h3>
+              <p class="text-gray-600">أعمال الميكانيكا وإصلاح المحركات</p>
+            </div>
+          </div>
+
+          <!-- صورة 2: الجيرات -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <img
+              src="images/girat.jpeg"
+              alt="إصلاح الجيرات"
+              class="w-full h-80 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">
+                إصلاح الجيرات
+              </h3>
+              <p class="text-gray-600">صيانة وإصلاح جيرات السيارات</p>
+            </div>
+          </div>
+
+          <!-- صورة 3: الكهرباء -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <img
+              src="images/car-electric.jpeg"
+              alt="كهرباء السيارات"
+              class="w-full h-80 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">
+                كهرباء السيارات
+              </h3>
+              <p class="text-gray-600">إصلاح الأنظمة الكهربائية</p>
+            </div>
+          </div>
+
+          <!-- صورة 4: المكيفات -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <img
+              src="images/ac.jpeg"
+              alt="صيانة المكيفات"
+              class="w-full h-80 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">
+                صيانة المكيفات
+              </h3>
+              <p class="text-gray-600">إصلاح وصيانة مكيفات السيارات</p>
+            </div>
+          </div>
+
+          <!-- صورة 5: البرمجة -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <img
+              src="images/programming.jpeg"
+              alt="برمجة السيارات"
+              class="w-full h-80 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">
+                برمجة السيارات
+              </h3>
+              <p class="text-gray-600">برمجة وتشخيص أنظمة السيارات</p>
+            </div>
+          </div>
+
+          <!-- صورة 6: إعلان الخدمات -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <img
+              src="images/services-ad.jpeg"
+              alt="خدماتنا"
+              class="w-full h-80 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">خدماتنا</h3>
+              <p class="text-gray-600">مجموعة شاملة من خدمات السيارات</p>
+            </div>
+          </div>
+
+          <!-- صورة 7: البانر -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <img
+              src="images/banner.png"
+              alt="كيو سيفن"
+              class="w-full h-80 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">كيو سيفن</h3>
+              <p class="text-gray-600">شعار ومعلومات الكراج</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-primary-blue mb-4">
+            معرض الفيديوهات
+          </h2>
+          <p class="text-lg text-gray-600">
+            فيديوهات من أعمالنا في صيانة وإصلاح السيارات الألمانية
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- فيديو 1 -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <div class="video-container">
+              <video controls class="w-full h-80 object-cover">
+                <source src="videos/1.mp4" type="video/mp4" />
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">عمل رقم 1</h3>
+              <p class="text-gray-600">من أعمالنا في صيانة وإصلاح السيارات</p>
+            </div>
+          </div>
+
+          <!-- فيديو 2 -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <div class="video-container">
+              <video controls class="w-full h-80 object-cover">
+                <source src="videos/2.mp4" type="video/mp4" />
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">عمل رقم 2</h3>
+              <p class="text-gray-600">من أعمالنا في صيانة وإصلاح السيارات</p>
+            </div>
+          </div>
+
+          <!-- فيديو 3 -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <div class="video-container">
+              <video controls class="w-full h-80 object-cover">
+                <source src="videos/3.mp4" type="video/mp4" />
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">عمل رقم 3</h3>
+              <p class="text-gray-600">من أعمالنا في صيانة وإصلاح السيارات</p>
+            </div>
+          </div>
+
+          <!-- فيديو 4 -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <div class="video-container">
+              <video controls class="w-full h-80 object-cover">
+                <source src="videos/4.mp4" type="video/mp4" />
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">عمل رقم 4</h3>
+              <p class="text-gray-600">من أعمالنا في صيانة وإصلاح السيارات</p>
+            </div>
+          </div>
+
+          <!-- فيديو 5 -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <div class="video-container">
+              <video controls class="w-full h-80 object-cover">
+                <source src="videos/5.mp4" type="video/mp4" />
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">عمل رقم 5</h3>
+              <p class="text-gray-600">من أعمالنا في صيانة وإصلاح السيارات</p>
+            </div>
+          </div>
+
+          <!-- فيديو 7 -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <div class="video-container">
+              <video controls class="w-full h-80 object-cover">
+                <source src="videos/7.mp4" type="video/mp4" />
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">عمل رقم 7</h3>
+              <p class="text-gray-600">من أعمالنا في صيانة وإصلاح السيارات</p>
+            </div>
+          </div>
+
+          <!-- فيديو 8 -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <div class="video-container">
+              <video controls class="w-full h-80 object-cover">
+                <source src="videos/8.mp4" type="video/mp4" />
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">عمل رقم 8</h3>
+              <p class="text-gray-600">من أعمالنا في صيانة وإصلاح السيارات</p>
+            </div>
+          </div>
+
+          <!-- فيديو 9 -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <div class="video-container">
+              <video controls class="w-full h-80 object-cover">
+                <source src="videos/9.mp4" type="video/mp4" />
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">عمل رقم 9</h3>
+              <p class="text-gray-600">من أعمالنا في صيانة وإصلاح السيارات</p>
+            </div>
+          </div>
+
+          <!-- فيديو 10 -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <div class="video-container">
+              <video controls class="w-full h-80 object-cover">
+                <source src="videos/10.mp4" type="video/mp4" />
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">عمل رقم 10</h3>
+              <p class="text-gray-600">من أعمالنا في صيانة وإصلاح السيارات</p>
+            </div>
+          </div>
+
+          <!-- فيديو 11 -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <div class="video-container">
+              <video controls class="w-full h-80 object-cover">
+                <source src="videos/11.mp4" type="video/mp4" />
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">عمل رقم 11</h3>
+              <p class="text-gray-600">من أعمالنا في صيانة وإصلاح السيارات</p>
+            </div>
+          </div>
+
+          <!-- فيديو 12 -->
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden gallery-item"
+          >
+            <div class="video-container">
+              <video controls class="w-full h-80 object-cover">
+                <source src="videos/12.mp4" type="video/mp4" />
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">عمل رقم 12</h3>
+              <p class="text-gray-600">من أعمالنا في صيانة وإصلاح السيارات</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-blue text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-2xl font-bold mb-4 text-primary-yellow">
+              كيو سيفن
+            </h3>
+            <p>متخصصون في صيانة وإصلاح السيارات الألمانية</p>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold mb-4">خدماتنا</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="engine-service.html"
+                  class="hover:text-primary-yellow transition-colors"
+                  >تصليح وصيانة ماكينات السيارات</a
+                >
+              </li>
+              <li>
+                <a
+                  href="transmission-service.html"
+                  class="hover:text-primary-yellow transition-colors"
+                  >صيانة وتصليح الجيرات</a
+                >
+              </li>
+              <li>
+                <a
+                  href="programming-service.html"
+                  class="hover:text-primary-yellow transition-colors"
+                  >برمجة جميع انواع السيارات</a
+                >
+              </li>
+              <li>
+                <a
+                  href="ac-service.html"
+                  class="hover:text-primary-yellow transition-colors"
+                  >تصليح وصيانة المكيفات</a
+                >
+              </li>
+              <li>
+                <a
+                  href="electrical-service.html"
+                  class="hover:text-primary-yellow transition-colors"
+                  >تصليح كهرباء السيارات</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold mb-4">تواصل معنا</h4>
+            <div class="space-y-2">
+              <div>📞 50735077</div>
+              <div>📞 50266004</div>
+              <div>
+                📍 الكويت : الشويخ الصناعية 1 قطعة 1 شارع 9 قسيمة 109 رقم المحل
+                44
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold mb-4">تابعنا على</h4>
+            <div class="flex space-x-4 rtl:space-x-reverse">
+              <a
+                href="https://www.facebook.com/European.art.garage?mibextid=wwXIfr&rdid=tIxHOR6Wfs1CNluP&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18rJ41BNvW%2F%3Fmibextid%3DwwXIfr#"
+                target="_blank"
+                class="text-gray-300 hover:text-primary-yellow transition-colors"
+              >
+                <i class="fab fa-facebook-f text-2xl"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/q7.garage/?igsh=MXg2ZG9xMjJvM3Z4dA%3D%3D&utm_source=qr#"
+                target="_blank"
+                class="text-gray-300 hover:text-primary-yellow transition-colors"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com/@q7.garage?_t=ZS-8wiI6zuzN4y&_r=1"
+                target="_blank"
+                class="text-gray-300 hover:text-primary-yellow transition-colors"
+              >
+                <i class="fab fa-tiktok text-2xl"></i>
+              </a>
+              <a
+                href="https://www.threads.com/@q7.garage"
+                target="_blank"
+                class="text-gray-300 hover:text-primary-yellow transition-colors"
+              >
+                <img
+                  src="/public/images/threads.png"
+                  alt=""
+                  class="w-10 h-10 inline-block -mt-1"
+              /></a>
+              <a
+                href="https://www.snapchat.com/add/q7.garage?invite_id=r_3h-s1a&locale=en_KW&share_id=AYO7vHVGTCas6v_fg5ZXGw&sid=f8a9545074e74d2fabbdf93a01bec0e7"
+                target="_blank"
+                class="text-gray-300 hover:text-primary-yellow transition-colors"
+              >
+                <i class="fab fa-snapchat text-2xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-blue-400 mt-8 pt-8 text-center">
+          <p>&copy; 2024 كيو سيفن. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="fixed-call-section">
+      <!-- add map link  -->
+      <a
+        href="https://www.google.com/maps/place/%D8%B4%D8%B1%D9%83%D8%A9+%D9%83%D9%8A%D9%88+%D8%B3%D9%8A%D9%81%D9%86+%D9%84%D8%A7%D8%B5%D9%84%D8%A7%D8%AD+%D9%85%D9%8A%D9%83%D8%A7%D9%86%D9%8A%D9%83%D8%A7+%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA%E2%80%AD/@29.331734,47.94005,17z/data=!3m1!4b1!4m6!3m5!1s0x3fcf9bd3ff9fb725:0xfebb49bae24c7bb8!8m2!3d29.331734!4d47.94005!16s%2Fg%2F11w1p_svrk?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank"
+        class="call-button phone-button"
+        title="موقعنا على الخريطة"
+      >
+        <i class="fa-solid fa-location-dot fa-2x text-white"></i>
+      </a>
+      <a
+        href="https://wa.me/96550735077"
+        class="call-button whatsapp-button"
+        target="_blank"
+        title="تواصل عبر الواتساب"
+      >
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.696"
+          />
+        </svg>
+      </a>
+
+      <a href="tel:50735077" class="call-button phone-button" title="اتصل الآن">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+          <path
+            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-2xl font-bold text-primary-yellow">كيو سيفن</h2>
+          <button class="text-white text-2xl" id="closeMobileMenu">
+            &times;
+          </button>
+        </div>
+
+        <nav class="space-y-4">
+          <a
+            href="index.html"
+            class="block text-white text-lg py-3 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+            >الرئيسية</a
+          >
+
+          <div class="border-t border-white border-opacity-20 pt-4">
+            <p class="text-primary-yellow font-bold mb-3">خدماتنا</p>
+            <a
+              href="engine-service.html"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >تصليح وصيانة ماكينات السيارات</a
+            >
+            <a
+              href="transmission-service.html"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >صيانة وتصليح الجيرات</a
+            >
+            <a
+              href="programming-service.html"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >برمجة جميع انواع السيارات</a
+            >
+            <a
+              href="ac-service.html"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >تصليح وصيانة المكيفات</a
+            >
+            <a
+              href="electrical-service.html"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >تصليح كهرباء السيارات</a
+            >
+            <a
+              href="our-work.html"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >نبذة عن أعمالنا</a
+            >
+          </div>
+
+          <div class="border-t border-white border-opacity-20 pt-4">
+            <p class="text-primary-yellow font-bold mb-3">تابعنا على</p>
+            <a
+              href="https://www.facebook.com/European.art.garage?mibextid=wwXIfr&rdid=p2FP7aH7cBBegomz&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18rJ41BNvW%2F%3Fmibextid%3DwwXIfr#"
+              target="_blank"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              ><i class="fab fa-facebook-f mr-2"></i> Facebook</a
+            >
+            <a
+              href="https://www.instagram.com/q7.garage/?igsh=MXg2ZG9xMjJvM3Z4dA%3D%3D&utm_source=qr#"
+              target="_blank"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              ><i class="fab fa-instagram mr-2"></i> Instagram</a
+            >
+            <a
+              href="https://www.tiktok.com/@q7.garage?_t=ZS-8wiI6zuzN4y&_r=1"
+              target="_blank"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              ><i class="fab fa-tiktok mr-2"></i> TikTok</a
+            >
+            <a
+              href="https://www.threads.com/@q7.garage?invite=0"
+              target="_blank"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              ><i class="fab fa-threads mr-2"></i> Threads</a
+            >
+            <a
+              href="https://www.snapchat.com/add/q7.garage?invite_id=r_3h-s1a&locale=en_KW&share_id=AYO7vHVGTCas6v_fg5ZXGw&sid=81c4d25cf15e42738bca79cbe1089336"
+              target="_blank"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              ><i class="fab fa-snapchat mr-2"></i> Snapchat</a
+            >
+          </div>
+
+          <div class="border-t border-white border-opacity-20 pt-4">
+            <a
+              href="https://www.google.com/maps?q=%D8%B4%D8%B1%D9%83%D8%A9+%D9%83%D9%8A%D9%88+%D8%B3%D9%8A%D9%81%D9%86+%D9%84%D8%A7%D8%B5%D9%84%D8%A7%D8%AD+%D9%85%D9%8A%D9%83%D8%A7%D9%86%D9%8A%D9%83%D8%A7+%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA%E2%80%AD/@29.331734,47.94005,17z/data=!3m1!4b1!4m6!3m5!1s0x3fcf9bd3ff9fb725:0xfebb49bae24c7bb8&entry=gps&lucs=94275302,94224825,94227247,94227248,47071704,47069508,94218641,94203019,47084304&g_ep=CAISEjI1LjE2LjEuNzQ3NTI2NjMwMBgAIKzfASpQOTQyNzUzMDIsOTQyMjQ4MjUsOTQyMjcyNDcsOTQyMjcyNDgsNDcwNzE3MDQsNDcwNjk1MDgsOTQyMTg2NDEsOTQyMDMwMTksNDcwODQzMDRCAktX&skid=9880da6b-b28a-4c68-a36d-cf29e518a203&g_st=iw"
+              target="_blank"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              ><i class="fas fa-map-marker-alt mr-2"></i> موقعنا على الخريطة</a
+            >
+          </div>
+
+          <div class="border-t border-white border-opacity-20 pt-4">
+            <p class="text-primary-yellow font-bold mb-3">اتصل بنا</p>
+            <a
+              href="tel:50735077"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >📞 50735077</a
+            >
+            <a
+              href="tel:50266004"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >📞 50266004</a
+            >
+            <a
+              href="https://wa.me/96550735077"
+              target="_blank"
+              class="block text-white py-2 px-4 rounded hover:bg-white hover:bg-opacity-10 transition-colors"
+              >💬 واتساب</a
+            >
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+      const hamburger = document.getElementById('hamburger')
+      const mobileMenu = document.getElementById('mobileMenu')
+      const closeMobileMenu = document.getElementById('closeMobileMenu')
+
+      function openMobileMenu() {
+        mobileMenu.classList.add('active')
+        hamburger.classList.add('active')
+        document.body.style.overflow = 'hidden'
+      }
+
+      function closeMobileMenuFunc() {
+        mobileMenu.classList.remove('active')
+        hamburger.classList.remove('active')
+        document.body.style.overflow = 'auto'
+      }
+
+      hamburger.addEventListener('click', openMobileMenu)
+      closeMobileMenu.addEventListener('click', closeMobileMenuFunc)
+
+      // Close mobile menu when clicking outside
+      mobileMenu.addEventListener('click', function (e) {
+        if (e.target === mobileMenu) {
+          closeMobileMenuFunc()
+        }
+      })
+    </script>
+  </body>
+</html>

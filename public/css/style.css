@@ -25,6 +25,10 @@
   animation: wave 2s infinite;
 }
 
+.google-button {
+  background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+}
+
 .whatsapp-button {
   background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
 }
